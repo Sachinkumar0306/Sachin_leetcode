@@ -2,13 +2,12 @@ class Solution {
 public:
     vector<int> rowAndMaximumOnes(vector<vector<int>>& mat) {
         vector<int>res;
-        int count =0;
         int index=0;
         int value=0;
         int m=mat.size();
         for(int i=0;i<m;i++)
         {
-            count=0;
+           int count=0;
             int n=mat[i].size();
             for(int j=0;j<n;j++)
             {
