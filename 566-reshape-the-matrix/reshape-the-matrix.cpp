@@ -17,7 +17,8 @@ public:
                     res.clear();
                 }
                 res.push_back(mat[i][j]);
-                if(c==++row)
+                row++;
+                if(c==row)
                 {
                     reshape.push_back(res);
                     row=0;
