@@ -1,27 +1,27 @@
 class Solution {
 public:
     string addBinary(string a, string b) {
-        string res;
-        int count=0;
-        int m=a.size()-1;
-        int n=b.size()-1;
-        while(m>=0||n>=0||count)
+        vector<int>res;
+        int i=a.size()-1;
+        int j=b.size()-1;
+        int carry=0;
+        while(i>=0||j>=0||carry)
         {
-            int sum=count;
-            if(m>=0)
+            int sum=carry;
+            if(i>=0)
             {
-                sum=sum+a[m]-'0';
-                m--;
+                sum+=a[i]-'0';
+                i--;
             }
-            if(n>=0)
+            if(j>=0)
             {
-                sum=sum+b[n]-'0';
-                n--;
+                sum+=b[j]-'0';
+                j--;
             }
-            res+=sum%2+'0';
-            count=sum/2;
+            res.push_back(sum%2+'0');
+            carry=sum/2;
         }
         reverse(res.begin(),res.end());
-        return res;
+        return string(res.begin(),res.end());
     }
 };
