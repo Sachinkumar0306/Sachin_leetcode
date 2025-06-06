@@ -10,15 +10,15 @@ public:
             int sum=count;
             if(m>=0)
             {
-                sum+=a[m]-'0';
+                sum=sum+a[m]-'0';
                 m--;
             }
             if(n>=0)
             {
-                sum+=b[n]-'0';
+                sum=sum+b[n]-'0';
                 n--;
             }
-            res+=(sum%2)+'0';
+            res+=sum%2+'0';
             count=sum/2;
         }
         reverse(res.begin(),res.end());
